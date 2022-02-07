@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cardbox from 'cardbox/Cardbox';
 import { Data } from '../interfaces';
+import * as S from './CardList_Style';
 
 export default function CardList() {
   const [requestsList, setRequestsList] = useState([]);
@@ -19,13 +20,11 @@ export default function CardList() {
       .catch(error => console.log(error));
   };
 
-  console.log(requestsList);
-
   return (
-    <>
+    <S.Container>
       {requestsList.map((requestsList: Data, i: number) => {
         return <Cardbox key={i} requestsList={requestsList} />;
       })}
-    </>
+    </S.Container>
   );
 }

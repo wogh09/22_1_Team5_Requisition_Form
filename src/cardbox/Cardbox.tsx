@@ -1,7 +1,6 @@
 import * as S from './Cardbox_Style';
 
 export default function Cardbox({ requestsList }) {
-  console.log('test>>', requestsList);
   return (
     <S.Wrap>
       <S.TextBox>
