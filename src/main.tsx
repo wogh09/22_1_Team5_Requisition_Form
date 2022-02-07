@@ -1,3 +1,9 @@
+import Nav from './nav/Nav';
+
 export default function Main() {
-  return <div>12323211323</div>;
+  return (
+    <div>
+      <Nav />
+    </div>
+  );
 }
