@@ -1,4 +1,4 @@
-export interface Idata {
+export interface Data {
   id: number;
   title: string;
   client: string;
@@ -8,4 +8,8 @@ export interface Idata {
   method: string[];
   material: string[];
   status: string;
+}
+
+export interface DataProps {
+  dataList: Data[];
 }
