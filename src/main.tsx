@@ -1,11 +1,14 @@
-import Cardbox from 'cardbox/Cardbox';
 import Nav from './nav/Nav';
+import CardList from 'cardList/CardList';
+import * as S from 'Main_Style';
 
 export default function Main() {
   return (
-    <div>
+    <>
       <Nav />
-      <Cardbox />
-    </div>
+      <S.Container>
+        <CardList />
+      </S.Container>
+    </>
   );
 }
