@@ -9,7 +9,3 @@ export interface Data {
   material: string[];
   status: string;
 }
-
-export interface DataProps {
-  dataList: Data[];
-}

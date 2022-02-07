@@ -8,8 +8,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body{
     background-color: #ffffff;
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  }
+    font-family:'Noto Sans KR'}
   a {
     color: inherit;
     text-decoration: none;
@@ -34,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
   }
+  
 `;
 
 export default GlobalStyle;
