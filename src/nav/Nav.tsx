@@ -13,7 +13,7 @@ export default function Nav() {
   return (
     <>
       <S.Nav>
-        <S.MobileMenu onClick={showMenu} />
+        <S.MobileMenuIcon onClick={showMenu} />
         <S.NavList>
           <S.NavItem>
             <S.Logo />

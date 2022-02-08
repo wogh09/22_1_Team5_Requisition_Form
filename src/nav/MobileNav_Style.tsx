@@ -1,27 +1,33 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import media from 'styled-media-query';
 import menulogo from '../assets/icon/CAPA_partners_colorlogo 1.png';
 
 export const Background = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: rgba(72, 72, 72, 0.7);
-  display: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
-    isClickedMenu ? 'block' : 'none'};
 `;
 
 export const MobileBox = styled.div`
   position: fixed;
   top: 0;
-  width: 280px;
-  height: 100%;
   left: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
     isClickedMenu ? '0' : '-300px'};
+  width: 280px;
+  height: 100vh;
   background-color: #fff;
-  transition: 0.5s;
   z-index: 1;
+  @keyframes menuSlide {
+    from {
+      left: -300px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  animation: menuSlide 0.5s ease-in-out 0s 1 normal forwards;
 `;
 
 export const MenuTop = styled.div`

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import * as S from './MobileNav_Style';
 import { ReactComponent as CompanyIcon } from 'assets/icon/companyIcon.svg';
 import useOnClickOutside from 'hooks/useOnClickOutside';
@@ -6,7 +6,7 @@ import useLockBodyScroll from 'hooks/useLockBodyScroll';
 
 interface Props {
   isClickedMenu: boolean;
-  setIsClickedMenu: (open: boolean) => void;
+  setIsClickedMenu: (state: boolean) => void;
 }
 
 export default function MobileNav({ isClickedMenu, setIsClickedMenu }: Props) {
@@ -32,7 +32,7 @@ export default function MobileNav({ isClickedMenu, setIsClickedMenu }: Props) {
           </S.MenuList>
         </S.MenuBottom>
       </S.MobileBox>
-      <S.Background isClickedMenu={isClickedMenu} />
+      <S.Background />
     </>
   );
 }
