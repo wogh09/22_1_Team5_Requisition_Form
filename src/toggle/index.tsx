@@ -1,7 +1,3 @@
-// import { useState, useEffect } from 'react';
-import { ToggleButton } from './Toggle';
-// import axios from 'axios';
-// import { dataType } from './type';
 import { FilterPropsType11 } from '../filter/Types';
 import * as S from './Toggle_style';
 
