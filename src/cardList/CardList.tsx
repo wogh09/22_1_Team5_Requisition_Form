@@ -1,29 +1,17 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import useAxios from 'hooks/useAxios';
 import Cardbox from 'cardbox/Cardbox';
 import { Data } from '../interfaces';
 import * as S from './CardList_Style';
 
 export default function CardList() {
-  const [requestsList, setRequestsList] = useState([]);
+  const { data }: any = useAxios('http://localhost:9000/requests');
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = async () => {
-    axios
-      .get('http://localhost:9000/requests')
-      .then(res => {
-        setRequestsList(res.data);
-      })
-      .catch(error => console.log(error));
-  };
+  console.log('test>>', data);
 
   return (
     <S.Container>
-      {requestsList.map((requestsList: Data, i: number) => {
-        return <Cardbox key={i} requestsList={requestsList} />;
+      {data?.map((data: Data, i: number) => {
+        return <Cardbox key={i} data={data} />;
       })}
     </S.Container>
   );
