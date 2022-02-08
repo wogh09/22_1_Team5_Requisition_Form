@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 import menulogo from '../assets/icon/CAPA_partners_colorlogo 1.png';
 
+export const Background = styled.div`
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+`;
+
 export const MobileBox = styled.div`
   display: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
     isClickedMenu ? 'block' : 'none'};
