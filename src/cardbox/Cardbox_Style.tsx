@@ -14,11 +14,12 @@ export const Wrap = styled.div`
 `;
 
 export const TextBox = styled.div``;
+
 export const Consulting = styled.div`
   display: flex;
   justify-content: space-between;
-}
 `;
+
 export const Header = styled.div`
   height: 24px;
   font-size: 16px;
@@ -44,7 +45,6 @@ export const ConsultingButton = styled.button`
 `;
 
 export const Client = styled.div`
-  width: 51px;
   height: 20px;
   font-size: 14px;
   font-weight: 500;

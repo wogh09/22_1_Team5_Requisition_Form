@@ -1,12 +1,18 @@
+import { useState } from 'react';
 import * as S from './Nav_Style';
 import MobileNav from './MobileNav';
 import { ReactComponent as CompanyIcon } from 'assets/icon/companyIcon.svg';
 
 export default function Nav() {
+  const [isClickedMenu, setIsClickedMenu] = useState<boolean>(false);
+
+  const showMenu = (): void => {
+    setIsClickedMenu(true);
+  };
   return (
     <>
       <S.Nav>
-        <S.MobileMenu />
+        <S.MobileMenu onClick={showMenu} />
         <S.NavList>
           <S.NavItem>
             <S.Logo />
@@ -20,7 +26,10 @@ export default function Nav() {
           </S.NavItem>
         </S.NavList>
       </S.Nav>
-      <MobileNav />
+      <MobileNav
+        isClickedMenu={isClickedMenu}
+        setIsClickedMenu={setIsClickedMenu}
+      />
     </>
   );
 }

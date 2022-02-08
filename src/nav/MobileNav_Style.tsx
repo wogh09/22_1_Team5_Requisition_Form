@@ -3,7 +3,9 @@ import media from 'styled-media-query';
 import menulogo from '../assets/icon/CAPA_partners_colorlogo 1.png';
 
 export const MobileBox = styled.div`
-  width: 70%;
+  display: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
+    isClickedMenu ? 'block' : 'none'};
+  width: 280px;
   height: 100vh;
   position: fixed;
   animation-name: slide;

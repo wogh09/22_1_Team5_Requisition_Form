@@ -1,9 +1,21 @@
+import { useRef } from 'react';
 import * as S from './MobileNav_Style';
 import { ReactComponent as CompanyIcon } from 'assets/icon/companyIcon.svg';
+import useOnClickOutside from 'hooks/useOnClickOutside';
 
-export default function MobileNav() {
+interface Props {
+  isClickedMenu: boolean;
+  setIsClickedMenu: (open: boolean) => void;
+}
+
+export default function MobileNav({ isClickedMenu, setIsClickedMenu }: Props) {
+  const menuRef = useRef<HTMLDivElement>(null);
+  useOnClickOutside(menuRef, () => {
+    setIsClickedMenu(false);
+  });
+
   return (
-    <S.MobileBox>
+    <S.MobileBox isClickedMenu={isClickedMenu} ref={menuRef}>
       <S.MenuTop>
         <S.MenuLogo />
       </S.MenuTop>

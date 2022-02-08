@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import logo from '../assets/icon/capa_logo.png';
-import companyIcon from '../assets/icon/company.png';
 import divider from '../assets/icon/divider.png';
 import menubar from '../assets/icon/menu_mobile.png';
 

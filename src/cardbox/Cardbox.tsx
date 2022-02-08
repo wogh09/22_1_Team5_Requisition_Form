@@ -1,15 +1,15 @@
 import * as S from './Cardbox_Style';
 
-export default function Cardbox() {
+export default function Cardbox({ requestsList }) {
   return (
     <S.Wrap>
       <S.TextBox>
         <S.Consulting>
-          <S.Header>자동차 시제품 제작</S.Header>
-          <S.ConsultingButton>상담중</S.ConsultingButton>
+          <S.Header>{requestsList.title}</S.Header>
+          <S.ConsultingButton>{requestsList.status}</S.ConsultingButton>
         </S.Consulting>
-        <S.Client>A 고객사</S.Client>
-        <S.DueDate>2020.12.14까지 납기</S.DueDate>
+        <S.Client>{requestsList.client}</S.Client>
+        <S.DueDate>{requestsList.due}까지 납기</S.DueDate>
         <S.CenterLine />
         <S.RequestDetails>
           <S.RequestType>
@@ -19,10 +19,10 @@ export default function Cardbox() {
             <S.Material>재료</S.Material>
           </S.RequestType>
           <S.Details>
-            <S.Number>2개</S.Number>
-            <S.TotalNumber>100개</S.TotalNumber>
-            <S.ProcessType>밀링, 선반</S.ProcessType>
-            <S.MaterialType>알루미늄</S.MaterialType>
+            <S.Number>{requestsList.count}개</S.Number>
+            <S.TotalNumber>{requestsList.amount}개</S.TotalNumber>
+            <S.ProcessType>{requestsList.method.toString()}</S.ProcessType>
+            <S.MaterialType>{requestsList.material.toString()}</S.MaterialType>
           </S.Details>
         </S.RequestDetails>
         <S.Buttons>
