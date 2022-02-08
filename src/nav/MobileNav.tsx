@@ -20,6 +20,9 @@ export default function MobileNav({
 
   useEffect(() => {
     windowSize > 768 && setIsClickedMenu(false);
+    return () => {
+      setIsClickedMenu(false);
+    };
   }, [setIsClickedMenu, windowSize]);
 
   return (
