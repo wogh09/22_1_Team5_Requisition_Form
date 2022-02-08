@@ -1,3 +1,4 @@
+import React from 'react';
 import Cardbox from 'cardbox/Cardbox';
 import * as S from './CardList_Style';
 
@@ -5,10 +6,18 @@ interface CardListPropsType {
   counselingState: {}[];
   counselingStateFilter: {}[];
   toggleState: boolean;
+  firestFilterValue: string;
+  secondFilterValue: string[];
 }
 
 export default function CardList(props: CardListPropsType) {
-  const { counselingState, counselingStateFilter, toggleState } = props;
+  const {
+    counselingState,
+    counselingStateFilter,
+    toggleState,
+    // firestFilterValue,
+    // secondFilterValue,
+  } = props;
 
   return (
     <div>

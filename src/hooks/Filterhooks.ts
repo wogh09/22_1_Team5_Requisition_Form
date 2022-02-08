@@ -1,19 +1,9 @@
 import React from 'react';
-import { Filter as Presenter } from './Filter';
-import { FilterPropsType3 } from './Types';
 
-export function Filter(props: FilterPropsType3) {
-  const {
-    changeCounseling,
-    toggleState,
-    firestFilterValue,
-    setFirestFilterValue,
-    secondFilterValue,
-    setSecondFilterValue,
-  } = props;
+export const useFilter = () => {
   // =======================filter value 저장==========================
-  // const [firestFilterValue, setFirestFilterValue] = React.useState('가공방식');
-  // const [secondFilterValue, setSecondFilterValue] = React.useState(['재료']);
+  const [firestFilterValue, setFirestFilterValue] = React.useState('가공방식');
+  const [secondFilterValue, setSecondFilterValue] = React.useState(['재료']);
 
   // =======================select on & off 로직=======================
   const [selectState, setSelectState] = React.useState([false, false]);
@@ -85,20 +75,4 @@ export function Filter(props: FilterPropsType3) {
     setFirestFilterValue('가공방식');
   };
   // =================================================================
-
-  return (
-    <Presenter
-      changeSelectState={changeSelectState}
-      changeFirestFilterState={changeFirestFilterState}
-      changeSecondFilterState={changeSecondFilterState}
-      resetFilter={resetFilter}
-      selectState={selectState}
-      firestFilterState={firestFilterState}
-      secondFilterState={secondFilterState}
-      firestFilterValue={firestFilterValue}
-      secondFilterValue={secondFilterValue}
-      changeCounseling={changeCounseling}
-      toggleState={toggleState}
-    />
-  );
-}
+};
