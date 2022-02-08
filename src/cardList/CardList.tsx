@@ -36,37 +36,37 @@ export default function CardList(props: CardListPropsType) {
   return (
     <div>
       {toggleState ? (
-        <S.Container>
+        <div>
           {firestFilterValue === '가공방식' ? (
-            <div>
+            <S.Container>
               {counselingStateFilter.map((List, index) => {
                 return <Cardbox key={index} List={List} />;
               })}
-            </div>
+            </S.Container>
           ) : (
-            <div>
+            <S.Container>
               {firestFilteringCounselingStateFilter.map((List, index) => {
                 return <Cardbox key={index} List={List} />;
               })}
-            </div>
+            </S.Container>
           )}
-        </S.Container>
+        </div>
       ) : (
-        <S.Container>
+        <div>
           {firestFilterValue === '가공방식' ? (
-            <div>
+            <S.Container>
               {counselingState?.map((List, index) => {
                 return <Cardbox key={index} List={List} />;
               })}
-            </div>
+            </S.Container>
           ) : (
-            <div>
+            <S.Container>
               {firestFilteringCounselingState?.map((List, index) => {
                 return <Cardbox key={index} List={List} />;
               })}
-            </div>
+            </S.Container>
           )}
-        </S.Container>
+        </div>
       )}
     </div>
   );
