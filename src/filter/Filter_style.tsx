@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const FilterConianier = styled.div`
   display: flex;
@@ -44,6 +45,11 @@ export const Section = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 1130px;
+
+  ${media.lessThan('small')`
+    flex-direction: column;
+    justify-content: flex-start;
+  `}
 `;
 export const Option = styled.option``;
 export const SelectContainer = styled.div`
