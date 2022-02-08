@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   ${media.lessThan('small')`
   grid-template-columns: repeat(1, 1fr);
-  `}
+ `}
 `;
 
 export const Empty = styled.p`

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const FilterConianier = styled.div`
   display: flex;
@@ -6,6 +7,12 @@ export const FilterConianier = styled.div`
   align-items: center;
   width: 100vw;
   margin-top: 40px;
+
+  ${media.lessThan('small')`
+   align-items: flex-start;
+   flex-direction: column;
+   margin-left:20px;
+  `}
 `;
 export const TitleContainer = styled.div`
   min-width: 1130px;
@@ -44,6 +51,12 @@ export const Section = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 1130px;
+
+  ${media.lessThan('small')`
+   align-items: flex-start;
+   flex-direction: column;
+   margin-bottom:32px;
+    `}
 `;
 export const Option = styled.option``;
 export const SelectContainer = styled.div`
