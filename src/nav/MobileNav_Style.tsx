@@ -1,5 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
-import media from 'styled-media-query';
+import styled from 'styled-components';
 import menulogo from '../assets/icon/CAPA_partners_colorlogo 1.png';
 
 export const Background = styled.div`
@@ -51,10 +50,6 @@ export const MenuLogo = styled.img.attrs({
   src: `${menulogo}`,
 })`
   width: 91px;
-
-  ${media.lessThan('small')`
-    display:block;
-  `}
 `;
 
 export const MenuBottom = styled.div`
