@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import * as S from './MobileNav_Style';
 import { ReactComponent as CompanyIcon } from 'assets/icon/companyIcon.svg';
 import useOnClickOutside from 'hooks/useOnClickOutside';
@@ -20,12 +20,8 @@ export default function MobileNav({ isClickedMenu, setIsClickedMenu }: Props) {
   const windowSize = useWindowSize();
 
   useEffect(() => {
-    windowSize >= 500 && setIsClickedMenu(false);
-  }, [windowSize]);
-
-  useEffect(() => {
-    return () => setIsClickedMenu(false);
-  }, [isClickedMenu]);
+    windowSize > 768 && setIsClickedMenu(false);
+  }, [setIsClickedMenu, windowSize]);
 
   return (
     <>
