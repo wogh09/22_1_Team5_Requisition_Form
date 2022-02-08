@@ -1,8 +1,9 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import * as S from './MobileNav_Style';
 import { ReactComponent as CompanyIcon } from 'assets/icon/companyIcon.svg';
 import useOnClickOutside from 'hooks/useOnClickOutside';
 import useLockBodyScroll from 'hooks/useLockBodyScroll';
+import useWindowSize from 'hooks/useWindowSize';
 
 interface Props {
   isClickedMenu: boolean;
@@ -15,6 +16,12 @@ export default function MobileNav({ isClickedMenu, setIsClickedMenu }: Props) {
     setIsClickedMenu(false);
   });
   useLockBodyScroll();
+
+  const windowSize = useWindowSize();
+
+  useEffect(() => {
+    windowSize >= 500 && setIsClickedMenu(false);
+  }, [windowSize]);
 
   return (
     <>
