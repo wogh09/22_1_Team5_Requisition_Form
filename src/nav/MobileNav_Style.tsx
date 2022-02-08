@@ -3,22 +3,26 @@ import media from 'styled-media-query';
 import menulogo from '../assets/icon/CAPA_partners_colorlogo 1.png';
 
 export const Background = styled.div`
-  background: rgba(76, 76, 76, 0.7);
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  background: hsla(0, 0%, 29.80392156862745%, 0.7);
   width: 100vw;
   height: 100vh;
-  /* display: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
-    isClickedMenu ? 'block' : 'none'}; */
+  display: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
+    isClickedMenu ? 'block' : 'none'};
 `;
 
 export const MobileBox = styled.div`
   width: 280px;
-  height: 100vh;
-  position: absolute;
+  height: 100%;
+  position: fixed;
   top: 0;
   left: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
     isClickedMenu ? '0' : '-300px'};
   background-color: #fff;
   transition: 0.5s;
+  z-index: 1;
 `;
 
 export const MenuTop = styled.div`
