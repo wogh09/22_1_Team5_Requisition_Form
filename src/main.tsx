@@ -40,23 +40,25 @@ export default function Main() {
   return (
     <>
       <Nav />
-      <Filter
-        changeCounseling={changeCounseling}
-        toggleState={toggleState}
-        firestFilterValue={firestFilterValue}
-        setFirestFilterValue={setFirestFilterValue}
-        secondFilterValue={secondFilterValue}
-        setSecondFilterValue={setSecondFilterValue}
-      />
-      <S.Container>
-        <CardList
-          counselingState={counselingState}
-          counselingStateFilter={counselingStateFilter}
+      <S.ContentsWrap>
+        <Filter
+          changeCounseling={changeCounseling}
           toggleState={toggleState}
           firestFilterValue={firestFilterValue}
+          setFirestFilterValue={setFirestFilterValue}
           secondFilterValue={secondFilterValue}
+          setSecondFilterValue={setSecondFilterValue}
         />
-      </S.Container>
+        <S.Container>
+          <CardList
+            counselingState={counselingState}
+            counselingStateFilter={counselingStateFilter}
+            toggleState={toggleState}
+            firestFilterValue={firestFilterValue}
+            secondFilterValue={secondFilterValue}
+          />
+        </S.Container>
+      </S.ContentsWrap>
     </>
   );
 }
