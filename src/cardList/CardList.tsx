@@ -1,4 +1,3 @@
-import React from 'react';
 import Cardbox from 'cardbox/Cardbox';
 import * as S from './CardList_Style';
 
