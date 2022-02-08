@@ -17,7 +17,7 @@ export const Nav = styled.nav`
   `}
 `;
 
-export const MobileMenu = styled.img.attrs({
+export const MobileMenuIcon = styled.img.attrs({
   src: `${menubar}`,
 })`
   width: 30px;
