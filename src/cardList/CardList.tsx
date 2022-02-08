@@ -15,14 +15,15 @@ export default function CardList(props: CardListPropsType) {
     counselingStateFilter,
     toggleState,
     firestFilterValue,
+
     // secondFilterValue,
   } = props;
 
-  const firestFilteringCounselingState = counselingState.filter(it =>
+  const firestFilteringCounselingState = counselingState.filter((it: any) =>
     new RegExp(firestFilterValue, 'i').test(it.method)
   );
   const firestFilteringCounselingStateFilter = counselingStateFilter.filter(
-    it => new RegExp(firestFilterValue, 'i').test(it.method)
+    (it: any) => new RegExp(firestFilterValue, 'i').test(it.method)
   );
 
   // for (let i = 0; secondFilterValue.length >= i; i++) {

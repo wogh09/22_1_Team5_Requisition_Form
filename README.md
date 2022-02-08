@@ -8,7 +8,7 @@
 
 ## 배포 링크
 
-<a href="">배포 링크</a>
+<a href="https://dreamy-euclid-5b6cf4.netlify.app">배포 링크</a>
 
 <br/><br/>
 
@@ -38,9 +38,17 @@
 
 - [`김재호`]
 
+  - Figma를 참고해 견적 요청 카드 컴포넌트 레이아웃 적용
+  - styled-media-query를 이용한 반응형 견적 요청 카드 박스컴포넌트 구현
+
 - [`김태영`]
 
 - [`원소연`]
+
+  - json-server 활용 RESTful API 구현
+  - useAxios 커스텀훅 로직 구현
+  - 받은 data CardList(요청서) Component 구현
+  - 빈 화면 조건부 렌더링
 
 - [`황주영`]
 
