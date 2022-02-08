@@ -23,6 +23,10 @@ export default function MobileNav({ isClickedMenu, setIsClickedMenu }: Props) {
     windowSize >= 500 && setIsClickedMenu(false);
   }, [windowSize]);
 
+  useEffect(() => {
+    return () => setIsClickedMenu(false);
+  }, [isClickedMenu]);
+
   return (
     <>
       <S.MobileBox isClickedMenu={isClickedMenu} ref={menuRef}>

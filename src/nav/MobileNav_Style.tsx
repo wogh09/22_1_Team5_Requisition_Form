@@ -13,8 +13,6 @@ export const Background = styled.div`
 export const MobileBox = styled.div`
   position: fixed;
   top: 0;
-  /* left: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
-    isClickedMenu ? '0' : '-300px'}; */
   width: 280px;
   height: 100vh;
   background-color: #fff;
