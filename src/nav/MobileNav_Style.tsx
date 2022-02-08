@@ -6,6 +6,8 @@ export const Background = styled.div`
   background: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
+  display: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
+    isClickedMenu ? 'block' : 'none'};
 `;
 
 export const MobileBox = styled.div`
