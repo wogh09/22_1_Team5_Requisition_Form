@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as S from './Nav_Style';
 import MobileNav from './MobileNav';
 import { ReactComponent as CompanyIcon } from 'assets/icon/companyIcon.svg';
