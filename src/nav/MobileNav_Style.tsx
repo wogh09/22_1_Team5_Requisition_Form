@@ -13,21 +13,35 @@ export const Background = styled.div`
 export const MobileBox = styled.div`
   position: fixed;
   top: 0;
-  left: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
-    isClickedMenu ? '0' : '-300px'};
+  /* left: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
+    isClickedMenu ? '0' : '-300px'}; */
   width: 280px;
   height: 100vh;
   background-color: #fff;
   z-index: 1;
-  @keyframes menuSlide {
-    from {
-      left: -300px;
+  @keyframes menuSlideIn {
+    0% {
+      transform: translate(-100%, 0);
     }
-    to {
-      left: 0px;
+
+    100% {
+      transform: translate(0, 0);
     }
   }
-  animation: menuSlide 0.5s ease-in-out 0s 1 normal forwards;
+
+  @keyframes menuSlideOut {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(-100%, 0);
+      display: none;
+    }
+  }
+  animation: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
+      isClickedMenu ? 'menuSlideIn' : 'menuSlideOut'}
+    0.5s;
 `;
 
 export const MenuTop = styled.div`
