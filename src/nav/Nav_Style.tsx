@@ -13,7 +13,6 @@ export const Nav = styled.nav`
 
   ${media.lessThan('medium')`
     display: flex;
-    justify-content: cetner;
     padding: 16px 23px;
   `}
 `;

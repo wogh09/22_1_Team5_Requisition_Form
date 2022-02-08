@@ -14,9 +14,8 @@ export const FilterConianier = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  min-width: 1130px;
+  /* min-width: 1130px; */
 `;
-
 export const Title = styled.h2`
   font-size: 20px;
   font-weight: 600;

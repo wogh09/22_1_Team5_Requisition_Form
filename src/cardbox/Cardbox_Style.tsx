@@ -12,7 +12,6 @@ export const Wrap = styled.div`
   height: 356px;
   left: 0px;
   top: 0px;
-
   :hover {
     border: 2px solid #2196f3;
   }
