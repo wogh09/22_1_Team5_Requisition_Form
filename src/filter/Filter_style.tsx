@@ -5,7 +5,7 @@ export const FilterConianier = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  margin-top: 110px;
+  margin-top: 40px;
 `;
 export const TitleContainer = styled.div`
   min-width: 1130px;
@@ -48,6 +48,7 @@ export const Option = styled.option``;
 export const SelectContainer = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 32px;
 `;
 export const ToggleContainer = styled.div``;
 export const FirstFilter = styled.div`
@@ -77,6 +78,7 @@ export const Ul = styled.ul`
   bottom: 0;
   left: 0;
   transform: translate(0%, 100%);
+  background: white;
 `;
 export const Li = styled.li`
   display: flex;

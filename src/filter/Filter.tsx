@@ -1,4 +1,3 @@
-import React from 'react';
 import * as S from './Filter_style';
 import { filterData, filterData2 } from './filterData';
 import { PointPropType } from './Types';
@@ -14,8 +13,20 @@ export function Filter(props: PointPropType) {
     secondFilterState,
     firestFilterValue,
     secondFilterValue,
-    // changevalue,
   } = props;
+
+  const viewFilterText = () => {
+    if (secondFilterValue.length >= 3) {
+      return `재료${secondFilterValue.length - 1}`;
+    }
+    if (secondFilterValue.length === 2) {
+      return secondFilterValue[1];
+    }
+    if (secondFilterValue.length === 1 && secondFilterValue[0] === '재료') {
+      return '재료';
+    }
+  };
+
   return (
     <S.FilterConianier>
       <S.TitleContainer>
@@ -45,7 +56,7 @@ export function Filter(props: PointPropType) {
                         className={name}
                         key={index}
                         onClick={changeFirestFilterState}
-                        checked={firestFilterState[index]}
+                        defaultChecked={firestFilterState[index]}
                       />
                       <label htmlFor={id}>{name}</label>
                     </S.Li>
@@ -57,7 +68,7 @@ export function Filter(props: PointPropType) {
 
           <S.SecondFilter>
             <S.Button onClick={changeSelectState} id="selectButton2">
-              {secondFilterValue}
+              {viewFilterText()}
               <img
                 src="/image/arrow_drop_down_24px.png"
                 alt="img"
@@ -75,7 +86,11 @@ export function Filter(props: PointPropType) {
                         type="checkbox"
                         className={name}
                         key={index}
-                        onClick={changeSecondFilterState}
+                        // onClick={changeSecondFilterState}
+                        onClick={e => {
+                          changeSecondFilterState(e);
+                          viewFilterText();
+                        }}
                         defaultChecked={secondFilterState[index]}
                       />
                       <label htmlFor={id}>{name}</label>
@@ -99,20 +114,3 @@ export function Filter(props: PointPropType) {
     </S.FilterConianier>
   );
 }
-/* <S.Select>
-    <S.Option value="none" hidden>
-      가공방식
-    </S.Option>
-    <S.Option value="밀링">밀링</S.Option>
-    <S.Option value="선반">선반</S.Option>
-  </S.Select>
-  <S.Select>
-    <S.Option value="none" selected hidden>
-      재료
-    </S.Option>
-    <S.Option value="알루미늄">알루미늄</S.Option>
-    <S.Option value="탄소강">탄소강</S.Option>
-    <S.Option value="구리">구리</S.Option>
-    <S.Option value="합금강">합금강</S.Option>
-    <S.Option value="강철">강철</S.Option>
-  </S.Select> */

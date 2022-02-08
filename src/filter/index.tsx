@@ -44,19 +44,19 @@ export function Filter(props: PointContainerPropType) {
     setFirestFilterValue(value);
   };
 
-  const changeSecondFilterState = (e: React.MouseEvent<HTMLElement>) => {
+  const changeSecondFilterState = e => {
     const defaultState = [...secondFilterState];
     const index = Number(e.currentTarget.id) - 3;
     defaultState[index] = !defaultState[index];
     setSecondFilterState(defaultState);
 
-    const a = Number(e.currentTarget.id) - 3;
-    console.log(a);
-    console.log(secondFilterState[a]);
+    console.log(index);
+    console.log(defaultState[index]);
 
-    if (secondFilterState[0] === true) {
-      // setSecondFilterValue([...secondFilterValue, e.currentTarget.className]);
-      console.log('aaa');
+    if (defaultState[index] === true) {
+      setSecondFilterValue([...secondFilterValue, e.currentTarget.className]);
+    } else if (defaultState[index] === false) {
+      // setSecondFilterValue(secondFilterValue.slice(index, index + 1));
     }
   };
 
@@ -76,10 +76,6 @@ export function Filter(props: PointContainerPropType) {
   console.log(secondFilterState);
   // =================================================================
 
-  // const changevalue = (e: React.MouseEvent<HTMLElement>) => {
-
-  // };
-
   return (
     <Presenter
       changeSelectState={changeSelectState}
@@ -91,7 +87,6 @@ export function Filter(props: PointContainerPropType) {
       secondFilterState={secondFilterState}
       firestFilterValue={firestFilterValue}
       secondFilterValue={secondFilterValue}
-      // changevalue={changevalue}
       {...props}
     />
   );
