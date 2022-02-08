@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
 function useOnClickOutside(ref, handler) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const listener = event => {
       if (!ref.current || ref.current.contains(event.target)) {
         return;
@@ -11,6 +11,7 @@ function useOnClickOutside(ref, handler) {
 
     document.addEventListener('mousedown', listener);
     document.addEventListener('touchstart', listener);
+
     return () => {
       document.removeEventListener('mousedown', listener);
       document.removeEventListener('touchstart', listener);
