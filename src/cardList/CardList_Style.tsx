@@ -6,11 +6,11 @@ export const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 
-  ${media.lessThan('medium')`
+  ${media.lessThan('large')`
   grid-template-columns: repeat(2, 1fr);
   `}
 
-  ${media.lessThan('small')`
+  ${media.lessThan('medium')`
   grid-template-columns: repeat(1, 1fr);
  `}
 `;

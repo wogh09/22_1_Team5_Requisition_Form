@@ -15,14 +15,14 @@ export const Wrap = styled.div`
   :hover {
     border: 2px solid #2196f3;
   }
-  ${media.lessThan('medium')`
+  ${media.lessThan('small')`
   width: 320px;
   height: 344px;
   `}
 `;
 
 export const TextBox = styled.div`
-  ${media.lessThan('medium')`
+  ${media.lessThan('small')`
    width: 288px;
    height: 344px;
 `}
@@ -31,7 +31,7 @@ export const TextBox = styled.div`
 export const Consulting = styled.div`
   display: flex;
   justify-content: space-between;
-  ${media.lessThan('medium')`
+  ${media.lessThan('small')`
     width: 288px;
 `}
 `;

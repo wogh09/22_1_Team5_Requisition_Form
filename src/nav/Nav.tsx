@@ -20,8 +20,9 @@ export default function Nav() {
           </S.NavItem>
           <S.NavItem>
             <S.MenuList>
-              <CompanyIcon fill="#fff" />A 가공 업체
+              <CompanyIcon fill="#fff" />
             </S.MenuList>
+            <S.MenuList>A 가공 업체</S.MenuList>
             <S.DividerIcon />
             <S.MenuList>로그아웃</S.MenuList>
           </S.NavItem>

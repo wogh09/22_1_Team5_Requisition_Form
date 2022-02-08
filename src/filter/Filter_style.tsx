@@ -4,19 +4,17 @@ import media from 'styled-media-query';
 export const FilterConianier = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100vw;
+  align-items: flex-start;
   margin-top: 40px;
 
   ${media.lessThan('medium')`
    align-items: flex-start;
    flex-direction: column;
-   margin-left:20px;
   `}
 `;
 
 export const TitleContainer = styled.div`
-  min-width: 1130px;
+  /* min-width: 1130px; */
 `;
 export const Title = styled.h2`
   font-size: 20px;
@@ -54,10 +52,11 @@ export const Reset = styled.div`
 `;
 
 export const Section = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1130px;
+  margin-bottom: 32px;
 
   ${media.lessThan('medium')`
    align-items: flex-start;
@@ -70,7 +69,10 @@ export const Option = styled.option``;
 export const SelectContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 32px;
+
+  ${media.lessThan('medium')`
+   margin-bottom:32px;
+    `}
 `;
 
 export const ToggleContainer = styled.div`
