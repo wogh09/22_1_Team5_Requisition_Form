@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrap = styled.div`
   border: 1px solid #e5e5e5;
@@ -14,6 +15,10 @@ export const Wrap = styled.div`
   :hover {
     border: 2px solid #2196f3;
   }
+
+  ${media.lessThan('medium')`
+  width: 320px;
+  `}
 `;
 
 export const TextBox = styled.div``;
