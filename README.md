@@ -30,28 +30,36 @@
 
 ### 소통 툴
 
-- Git, Github, Slack, Discord, <a href="https://www.notion.so/2-65fbc9c4e43e47a6a95df386f1a61402">Notion</a>
+- Git, Github, Slack, Discord, <a href="https://olive-trapezoid-dec.notion.site/3-17108ba499b04d8bb48d2507bbf00cdd">Notion</a>
 
 <br/><br/>
 
 ## 역할
 
 - [`김재호`]
-
   - Figma를 참고해 견적 요청 카드 컴포넌트 레이아웃 적용
   - styled-media-query를 이용한 반응형 견적 요청 카드 박스컴포넌트 구현
 
 - [`김태영`]
+  - title & filter 레이아웃 작성
+  - 필터 select 옵션리스트 on & off 함수 및 state 작성
+  - select 옵션 내부에 checkbox 추가
+  - 가공방식 select 1개만 선택되도록 함수 및 state 작성
+  - 가공방식 리스트에 맞는 필터링 함수 작성
+  - 재료 select 다중 선택 기능 및 다중 선택 시 select 재료 갯수 증가
+  - 필터링 리셋 함수 작성
+  - '상담 중인 요청만 보기' Toggle 함수 작성
 
 - [`원소연`]
-
   - json-server 활용 RESTful API 구현
   - useAxios 커스텀훅 로직 구현
   - 받은 data CardList(요청서) Component 구현
   - 빈 화면 조건부 렌더링
 
 - [`황주영`]
-
+  - nav바 레이아웃 및 반응형 구현 
+  - 카드레이아웃 반응형 구현
+  
 <br/><br/>
 
 ## 설치 및 시작하는 법
