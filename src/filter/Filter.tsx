@@ -55,8 +55,8 @@ export function Filter(props: PointPropType) {
                         type="checkbox"
                         className={name}
                         key={index}
-                        onClick={changeFirestFilterState}
-                        defaultChecked={firestFilterState[index]}
+                        onChange={changeFirestFilterState}
+                        checked={firestFilterState[index]}
                       />
                       <label htmlFor={id}>{name}</label>
                     </S.Li>
