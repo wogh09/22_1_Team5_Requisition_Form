@@ -1,30 +1,30 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import Cardbox from 'cardbox/Cardbox';
-import { Data } from '../interfaces';
 import * as S from './CardList_Style';
 
-export default function CardList() {
-  const [requestsList, setRequestsList] = useState([]);
+interface CardListPropsType {
+  counselingState: {}[];
+  counselingStateFilter: {}[];
+  toggleState: boolean;
+}
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = async () => {
-    axios
-      .get('http://localhost:9000/requests')
-      .then(res => {
-        setRequestsList(res.data);
-      })
-      .catch(error => console.log(error));
-  };
+export default function CardList(props: CardListPropsType) {
+  const { counselingState, counselingStateFilter, toggleState } = props;
 
   return (
-    <S.Container>
-      {requestsList.map((requestsList: Data, i: number) => {
-        return <Cardbox key={i} requestsList={requestsList} />;
-      })}
-    </S.Container>
+    <div>
+      {toggleState ? (
+        <S.Container>
+          {counselingStateFilter.map((List, index) => {
+            return <Cardbox key={index} List={List} />;
+          })}
+        </S.Container>
+      ) : (
+        <S.Container>
+          {counselingState?.map((List, index) => {
+            return <Cardbox key={index} List={List} />;
+          })}
+        </S.Container>
+      )}
+    </div>
   );
 }

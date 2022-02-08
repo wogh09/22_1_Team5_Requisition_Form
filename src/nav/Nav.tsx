@@ -15,8 +15,6 @@ export default function Nav() {
     }
   };
 
-  console.log(isClickedMenu);
-
   return (
     <>
       <S.Nav>
