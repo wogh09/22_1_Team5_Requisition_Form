@@ -14,6 +14,8 @@ export default function Main() {
   const [firestFilterValue, setFirestFilterValue] = useState('가공방식');
   const [secondFilterValue, setSecondFilterValue] = useState(['재료']);
   // =====================================================
+  // console.log(firestFilterValue);
+  // console.log(secondFilterValue);
 
   const changeCounseling = () => {
     setToggleState(!toggleState);
