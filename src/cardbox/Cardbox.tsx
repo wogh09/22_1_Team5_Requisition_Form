@@ -1,15 +1,15 @@
 import * as S from './Cardbox_Style';
 
-export default function Cardbox({ requestsList }) {
+export default function Cardbox({ data }) {
   return (
     <S.Wrap>
       <S.TextBox>
         <S.Consulting>
-          <S.Header>{requestsList.title}</S.Header>
-          <S.ConsultingButton>{requestsList.status}</S.ConsultingButton>
+          <S.Header>{data.title}</S.Header>
+          <S.ConsultingButton>{data.status}</S.ConsultingButton>
         </S.Consulting>
-        <S.Client>{requestsList.client}</S.Client>
-        <S.DueDate>{requestsList.due}까지 납기</S.DueDate>
+        <S.Client>{data.client}</S.Client>
+        <S.DueDate>{data.due}까지 납기</S.DueDate>
         <S.CenterLine />
         <S.RequestDetails>
           <S.RequestType>
@@ -19,10 +19,10 @@ export default function Cardbox({ requestsList }) {
             <S.Material>재료</S.Material>
           </S.RequestType>
           <S.Details>
-            <S.Number>{requestsList.count}개</S.Number>
-            <S.TotalNumber>{requestsList.amount}개</S.TotalNumber>
-            <S.ProcessType>{requestsList.method.toString()}</S.ProcessType>
-            <S.MaterialType>{requestsList.material.toString()}</S.MaterialType>
+            <S.Number>{data.count}개</S.Number>
+            <S.TotalNumber>{data.amount}개</S.TotalNumber>
+            <S.ProcessType>{data.method.toString()}</S.ProcessType>
+            <S.MaterialType>{data.material.toString()}</S.MaterialType>
           </S.Details>
         </S.RequestDetails>
         <S.Buttons>
