@@ -1,4 +1,8 @@
-export interface PointPropType extends React.HTMLProps<HTMLDivElement> {
+export interface FilterPropsType {
+  changeCounseling?(): void;
+  toggleState?: boolean;
+}
+export interface FilterPropsType2 extends FilterPropsType {
   changeSelectState(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
   changeFirestFilterState(e: React.ChangeEvent<HTMLInputElement>): void;
   changeSecondFilterState(

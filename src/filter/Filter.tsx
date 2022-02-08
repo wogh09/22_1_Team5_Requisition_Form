@@ -1,9 +1,9 @@
 import * as S from './Filter_style';
 import { filterData, filterData2 } from './filterData';
-import { PointPropType } from './Types';
-import ToggleButton from '../toggle/Toggle';
+import { FilterPropsType2 } from './Types';
+import Toggle from '../toggle';
 
-export function Filter(props: PointPropType) {
+export function Filter(props: FilterPropsType2) {
   const {
     changeSelectState,
     changeFirestFilterState,
@@ -14,6 +14,8 @@ export function Filter(props: PointPropType) {
     secondFilterState,
     firestFilterValue,
     secondFilterValue,
+    changeCounseling,
+    toggleState,
   } = props;
 
   const viewFilterText = () => {
@@ -111,7 +113,10 @@ export function Filter(props: PointPropType) {
         </S.SelectContainer>
 
         <S.ToggleContainer>
-          <ToggleButton />
+          <Toggle
+            changeCounseling={changeCounseling}
+            toggleState={toggleState}
+          />
           <S.ToggleText>상담 중인 요청만 보기</S.ToggleText>
         </S.ToggleContainer>
       </S.Section>
