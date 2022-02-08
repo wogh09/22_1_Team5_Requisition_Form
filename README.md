@@ -4,7 +4,23 @@
 
 ### 파트너스 고객 요청서 확인 페이지
 
-<br/><br/>
+<br/>
+
+### Card
+- 셀렉트 옵션 필터 정렬 기능
+- '상담 중인 요청만 보기' Toggle 기능
+- 반응형 레이아웃
+
+![카드반응형](https://user-images.githubusercontent.com/90748606/153068591-912252fc-8c79-41e0-b737-cd938cc8166c.gif)
+
+### Nav
+- 반응형 레이아웃
+- 모달 오픈시 스크롤락 기능
+- 모달 오픈 상태로 브레이크포인트 초과 시 모달종료
+
+![네브기능](https://user-images.githubusercontent.com/90748606/153068717-181aaf3d-5e84-43e1-b949-50c3f6d5be4e.gif)
+
+<br/>
 
 ## 배포 링크
 
