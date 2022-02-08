@@ -9,9 +9,13 @@ export default function Nav() {
   const showMenu = (): void => {
     setIsClickedMenu(true);
     if (isClickedMenu) {
-      document.body.style.background = 'rgba(0, 0, 0, 0.5)';
+      document.body.style.background = 'rgba(0,0,0,0.4)';
+    } else {
+      console.log('good');
     }
   };
+
+  console.log(isClickedMenu);
 
   return (
     <>
