@@ -7,7 +7,7 @@ export default function Nav() {
   const [isClickedMenu, setIsClickedMenu] = useState<boolean>(false);
 
   const showMenu = (): void => {
-    setIsClickedMenu(true);
+    setIsClickedMenu(!isClickedMenu);
   };
 
   return (
@@ -30,6 +30,7 @@ export default function Nav() {
       </S.Nav>
       {isClickedMenu && (
         <MobileNav
+          showMenu={showMenu}
           isClickedMenu={isClickedMenu}
           setIsClickedMenu={setIsClickedMenu}
         />

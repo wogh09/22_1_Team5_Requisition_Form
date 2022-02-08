@@ -1,23 +1,22 @@
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import * as S from './MobileNav_Style';
 import { ReactComponent as CompanyIcon } from 'assets/icon/companyIcon.svg';
-import useOnClickOutside from 'hooks/useOnClickOutside';
 import useLockBodyScroll from 'hooks/useLockBodyScroll';
 import useWindowSize from 'hooks/useWindowSize';
 
 interface Props {
   isClickedMenu: boolean;
   setIsClickedMenu: (state: boolean) => void;
+  showMenu: (boolean) => void;
 }
 
-export default function MobileNav({ isClickedMenu, setIsClickedMenu }: Props) {
-  const menuRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(menuRef, () => {
-    setIsClickedMenu(false);
-  });
-  useLockBodyScroll();
-
+export default function MobileNav({
+  showMenu,
+  isClickedMenu,
+  setIsClickedMenu,
+}: Props) {
   const windowSize = useWindowSize();
+  useLockBodyScroll();
 
   useEffect(() => {
     windowSize > 768 && setIsClickedMenu(false);
@@ -25,7 +24,7 @@ export default function MobileNav({ isClickedMenu, setIsClickedMenu }: Props) {
 
   return (
     <>
-      <S.MobileBox isClickedMenu={isClickedMenu} ref={menuRef}>
+      <S.MobileBox isClickedMenu={isClickedMenu}>
         <S.MenuTop>
           <S.MenuLogo />
         </S.MenuTop>
@@ -39,7 +38,7 @@ export default function MobileNav({ isClickedMenu, setIsClickedMenu }: Props) {
           </S.MenuList>
         </S.MenuBottom>
       </S.MobileBox>
-      <S.Background />
+      <S.Background onClick={showMenu} />
     </>
   );
 }
