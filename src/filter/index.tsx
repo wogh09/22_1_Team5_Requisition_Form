@@ -7,7 +7,6 @@ export function Filter(props: PointContainerPropType) {
   // =======================filter value 저장==========================
   const [firestFilterValue, setFirestFilterValue] = React.useState('가공방식');
   const [secondFilterValue, setSecondFilterValue] = React.useState(['재료']);
-  // console.log(firestFilterValue);
 
   // =======================select on & off 로직=======================
   const [selectState, setSelectState] = React.useState([false, false]);
@@ -31,7 +30,6 @@ export function Filter(props: PointContainerPropType) {
     false,
     false,
   ]);
-  // console.log(firestFilterState);
   const [secondFilterState, setSecondFilterState] = React.useState([
     false,
     false,
@@ -63,9 +61,6 @@ export function Filter(props: PointContainerPropType) {
 
     defaultState[index] = !defaultState[index];
     setSecondFilterState(defaultState);
-
-    // console.log(index);
-    // console.log(defaultState[index]);
 
     if (defaultState[index] === true) {
       setSecondFilterValue([...secondFilterValue, name]);

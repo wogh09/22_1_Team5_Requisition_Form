@@ -1,6 +1,7 @@
 import * as S from './Filter_style';
 import { filterData, filterData2 } from './filterData';
 import { PointPropType } from './Types';
+import ToggleButton from '../toggle/Toggle';
 
 export function Filter(props: PointPropType) {
   const {
@@ -86,7 +87,6 @@ export function Filter(props: PointPropType) {
                         type="checkbox"
                         className={name}
                         key={index}
-                        // onClick={changeSecondFilterState}
                         onClick={e => {
                           changeSecondFilterState(e);
                           viewFilterText();
@@ -100,15 +100,19 @@ export function Filter(props: PointPropType) {
               </S.Ul>
             )}
           </S.SecondFilter>
-
-          <S.ResetButton onClick={resetFilter}>
-            <S.ResetImg src="/image/refresh_24px.svg" alt="reset" />
-            <S.Reset>필터링 리셋</S.Reset>
-          </S.ResetButton>
+          {secondFilterValue.length >= 2 ||
+          firestFilterValue === '밀링' ||
+          firestFilterValue === '선반' ? (
+            <S.ResetButton onClick={resetFilter}>
+              <S.ResetImg src="/image/refresh_24px.svg" alt="reset" />
+              <S.Reset>필터링 리셋</S.Reset>
+            </S.ResetButton>
+          ) : null}
         </S.SelectContainer>
 
         <S.ToggleContainer>
-          <button>상담 중인 요청만 보기</button>
+          <ToggleButton />
+          <S.ToggleText>상담 중인 요청만 보기</S.ToggleText>
         </S.ToggleContainer>
       </S.Section>
     </S.FilterConianier>

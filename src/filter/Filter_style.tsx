@@ -14,6 +14,7 @@ export const Title = styled.h2`
   font-size: 20px;
   font-weight: 600;
   color: #323d45;
+  line-height: 32px;
 `;
 export const SubText = styled.p`
   font-size: 16px;
@@ -50,7 +51,9 @@ export const SelectContainer = styled.div`
   align-items: center;
   margin-bottom: 32px;
 `;
-export const ToggleContainer = styled.div``;
+export const ToggleContainer = styled.div`
+  display: flex;
+`;
 export const FirstFilter = styled.div`
   position: relative;
   margin-right: 8px;
@@ -65,6 +68,9 @@ export const Button = styled.button`
   border-radius: 4px;
   padding: 8px 12px;
   position: relative;
+`;
+export const ToggleText = styled.span`
+  font-size: 14px;
 `;
 export const Ul = styled.ul`
   display: flex;
