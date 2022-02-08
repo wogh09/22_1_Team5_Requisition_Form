@@ -1,24 +1,47 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import media from 'styled-media-query';
 import menulogo from '../assets/icon/CAPA_partners_colorlogo 1.png';
 
 export const Background = styled.div`
-  background: rgba(76, 76, 76, 0.7);
+  position: fixed;
+  top: 0;
   width: 100vw;
   height: 100vh;
-  /* display: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
-    isClickedMenu ? 'block' : 'none'}; */
+  background: rgba(72, 72, 72, 0.7);
 `;
 
 export const MobileBox = styled.div`
+  position: fixed;
+  top: 0;
+  /* left: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
+    isClickedMenu ? '0' : '-300px'}; */
   width: 280px;
   height: 100vh;
-  position: absolute;
-  top: 0;
-  left: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
-    isClickedMenu ? '0' : '-300px'};
   background-color: #fff;
-  transition: 0.5s;
+  z-index: 1;
+  @keyframes menuSlideIn {
+    0% {
+      transform: translate(-100%, 0);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes menuSlideOut {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(-100%, 0);
+      display: none;
+    }
+  }
+  animation: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
+      isClickedMenu ? 'menuSlideIn' : 'menuSlideOut'}
+    0.5s;
 `;
 
 export const MenuTop = styled.div`
