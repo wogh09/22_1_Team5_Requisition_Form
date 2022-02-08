@@ -5,6 +5,14 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+
+  ${media.lessThan('large')`
+  grid-template-columns: repeat(2, 1fr);
+  `}
+
+  ${media.lessThan('medium')`
+  grid-template-columns: repeat(1, 1fr);
+ `}
 `;
 
 export const Empty = styled.p`

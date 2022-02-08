@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   background-color: rgba(21, 101, 192, 1);
   margin: 0 auto;
 
-  ${media.lessThan('small')`
+  ${media.lessThan('medium')`
     display: flex;
     justify-content: cetner;
     padding: 16px 23px;
@@ -25,7 +25,7 @@ export const MobileMenuIcon = styled.img.attrs({
   display: none;
   margin-right: 19px;
 
-  ${media.lessThan('small')`
+  ${media.lessThan('medium')`
     display:block;
   `}
 `;
@@ -37,22 +37,25 @@ export const NavList = styled.ul`
   align-items: center;
   margin: 0 auto;
 
-  ${media.lessThan('small')`
+  ${media.lessThan('medium')`
     width:100%;
   `}
 `;
 
 export const NavItem = styled.li`
   display: flex;
-  width: 200px;
   justify-content: space-between;
   align-items: center;
 `;
 
 export const MenuList = styled.span`
   display: flex;
+  margin-left: 10px;
+  &:last-child {
+    margin-left: 0;
+  }
 
-  ${media.lessThan('small')`
+  ${media.lessThan('medium')`
     display:none;
   `}
 `;
@@ -62,7 +65,7 @@ export const Logo = styled.img.attrs({
 })`
   width: 153px;
 
-  ${media.lessThan('small')`
+  ${media.lessThan('medium')`
   width: 92px;
   `}
 `;
@@ -71,8 +74,9 @@ export const DividerIcon = styled.img.attrs({
   src: `${divider}`,
 })`
   width: 3px;
+  margin: 0 32px;
 
-  ${media.lessThan('small')`
+  ${media.lessThan('medium')`
     display:none;
   `}
 `;

@@ -37,14 +37,16 @@ export default function Main() {
   return (
     <>
       <Nav />
-      <Filter changeCounseling={changeCounseling} toggleState={toggleState} />
-      <S.Container>
-        <CardList
-          counselingState={counselingState}
-          counselingStateFilter={counselingStateFilter}
-          toggleState={toggleState}
-        />
-      </S.Container>
+      <S.ContentsWrap>
+        <Filter changeCounseling={changeCounseling} toggleState={toggleState} />
+        <S.Container>
+          <CardList
+            counselingState={counselingState}
+            counselingStateFilter={counselingStateFilter}
+            toggleState={toggleState}
+          />
+        </S.Container>
+      </S.ContentsWrap>
     </>
   );
 }

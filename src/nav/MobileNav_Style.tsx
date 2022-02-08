@@ -39,6 +39,7 @@ export const MobileBox = styled.div`
       display: none;
     }
   }
+
   animation: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
       isClickedMenu ? 'menuSlideIn' : 'menuSlideOut'}
     0.5s;
