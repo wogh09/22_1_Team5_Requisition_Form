@@ -8,14 +8,7 @@ export default function Nav() {
 
   const showMenu = (): void => {
     setIsClickedMenu(true);
-    if (isClickedMenu) {
-      document.body.style.background = 'rgba(0,0,0,0.4)';
-    } else {
-      console.log('good');
-    }
   };
-
-  console.log(isClickedMenu);
 
   return (
     <>
@@ -34,10 +27,12 @@ export default function Nav() {
           </S.NavItem>
         </S.NavList>
       </S.Nav>
-      <MobileNav
-        isClickedMenu={isClickedMenu}
-        setIsClickedMenu={setIsClickedMenu}
-      />
+      {isClickedMenu && (
+        <MobileNav
+          isClickedMenu={isClickedMenu}
+          setIsClickedMenu={setIsClickedMenu}
+        />
+      )}
     </>
   );
 }

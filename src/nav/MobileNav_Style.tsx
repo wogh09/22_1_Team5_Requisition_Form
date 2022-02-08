@@ -5,19 +5,18 @@ import menulogo from '../assets/icon/CAPA_partners_colorlogo 1.png';
 export const Background = styled.div`
   position: absolute;
   top: 0;
-  overflow: hidden;
-  background: hsla(0, 0%, 29.80392156862745%, 0.7);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  background: rgba(72, 72, 72, 0.7);
   display: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
     isClickedMenu ? 'block' : 'none'};
 `;
 
 export const MobileBox = styled.div`
-  width: 280px;
-  height: 100%;
   position: fixed;
   top: 0;
+  width: 280px;
+  height: 100%;
   left: ${({ isClickedMenu }: { isClickedMenu: boolean }) =>
     isClickedMenu ? '0' : '-300px'};
   background-color: #fff;
