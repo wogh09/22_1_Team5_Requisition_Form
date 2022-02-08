@@ -1,4 +1,3 @@
-import React from 'react';
 import Cardbox from 'cardbox/Cardbox';
 import * as S from './CardList_Style';
 
@@ -15,24 +14,59 @@ export default function CardList(props: CardListPropsType) {
     counselingState,
     counselingStateFilter,
     toggleState,
-    // firestFilterValue,
+    firestFilterValue,
     // secondFilterValue,
   } = props;
+
+  const firestFilteringCounselingState = counselingState.filter(it =>
+    new RegExp(firestFilterValue, 'i').test(it.method)
+  );
+  const firestFilteringCounselingStateFilter = counselingStateFilter.filter(
+    it => new RegExp(firestFilterValue, 'i').test(it.method)
+  );
+
+  // for (let i = 0; secondFilterValue.length >= i; i++) {
+  //   console.log(
+  //     res.filter(list =>
+  //       new RegExp(secondFilterValue[i], 'i').test(list.method)
+  //     )
+  //   );
+  // }
 
   return (
     <div>
       {toggleState ? (
-        <S.Container>
-          {counselingStateFilter.map((List, index) => {
-            return <Cardbox key={index} List={List} />;
-          })}
-        </S.Container>
+        <div>
+          {firestFilterValue === '가공방식' ? (
+            <S.Container>
+              {counselingStateFilter.map((List, index) => {
+                return <Cardbox key={index} List={List} />;
+              })}
+            </S.Container>
+          ) : (
+            <S.Container>
+              {firestFilteringCounselingStateFilter.map((List, index) => {
+                return <Cardbox key={index} List={List} />;
+              })}
+            </S.Container>
+          )}
+        </div>
       ) : (
-        <S.Container>
-          {counselingState?.map((List, index) => {
-            return <Cardbox key={index} List={List} />;
-          })}
-        </S.Container>
+        <div>
+          {firestFilterValue === '가공방식' ? (
+            <S.Container>
+              {counselingState?.map((List, index) => {
+                return <Cardbox key={index} List={List} />;
+              })}
+            </S.Container>
+          ) : (
+            <S.Container>
+              {firestFilteringCounselingState?.map((List, index) => {
+                return <Cardbox key={index} List={List} />;
+              })}
+            </S.Container>
+          )}
+        </div>
       )}
     </div>
   );

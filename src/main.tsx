@@ -2,7 +2,6 @@ import Nav from './nav/Nav';
 import CardList from 'cardList/CardList';
 import * as S from 'Main_Style';
 import { Filter } from './filter';
-
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { dataType } from './toggle/type';
@@ -15,6 +14,8 @@ export default function Main() {
   const [firestFilterValue, setFirestFilterValue] = useState('가공방식');
   const [secondFilterValue, setSecondFilterValue] = useState(['재료']);
   // =====================================================
+  // console.log(firestFilterValue);
+  // console.log(secondFilterValue);
 
   const changeCounseling = () => {
     setToggleState(!toggleState);
