@@ -4,6 +4,10 @@ import { Filter as Presenter } from './Filter';
 interface PointContainerPropType extends React.HTMLProps<HTMLDivElement> {}
 
 export function Filter(props: PointContainerPropType) {
+  // =======================filter value 저장==========================
+  const [firestFilterValue, setFirestFilterValue] = React.useState('가공방식');
+  const [secondFilterValue, setSecondFilterValue] = React.useState(['재료']);
+
   // =======================select on & off 로직=======================
   const [selectState, setSelectState] = React.useState([false, false]);
 
@@ -20,7 +24,6 @@ export function Filter(props: PointContainerPropType) {
       setSelectState(defaultState2);
     }
   };
-  // =================================================================
 
   // =======================checkbox 상태값 저장 로직=====================
   const [firestFilterState, setFirestFilterState] = React.useState([
@@ -35,10 +38,17 @@ export function Filter(props: PointContainerPropType) {
     false,
   ]);
 
-  const changeFirestFilterState = (e: React.MouseEvent<HTMLElement>) => {
-    const defaultState = Array(2).fill(false);
+  const changeFirestFilterState = (e: React.ChangeEvent<HTMLInputElement>) => {
     const index = Number(e.currentTarget.id);
-    defaultState[index - 1] = true;
+    const defaultState = [...firestFilterState];
+    defaultState[index - 1] = !defaultState[index - 1];
+
+    if (index - 1 === 0) {
+      defaultState[1] = false;
+    } else if (index - 1 === 1) {
+      defaultState[0] = false;
+    }
+
     setFirestFilterState(defaultState);
     const value = e.currentTarget.className;
     setFirestFilterValue(value);
@@ -47,38 +57,27 @@ export function Filter(props: PointContainerPropType) {
   const changeSecondFilterState = (e: React.MouseEvent<HTMLElement>) => {
     const defaultState = [...secondFilterState];
     const index = Number(e.currentTarget.id) - 3;
+    const name = e.currentTarget.className;
+
     defaultState[index] = !defaultState[index];
     setSecondFilterState(defaultState);
 
-    const a = Number(e.currentTarget.id) - 3;
-    console.log(a);
-    console.log(secondFilterState[a]);
-
-    if (secondFilterState[0] === true) {
-      // setSecondFilterValue([...secondFilterValue, e.currentTarget.className]);
-      console.log('aaa');
+    if (defaultState[index] === true) {
+      setSecondFilterValue([...secondFilterValue, name]);
+    } else if (defaultState[index] === false) {
+      setSecondFilterValue(secondFilterValue.filter(list => list !== name));
     }
   };
-
-  // =================================================================
 
   // =======================reset 로직=================================
   const resetFilter = () => {
     setFirestFilterState([false, false]);
     setSecondFilterState([false, false, false, false, false]);
     setSelectState([false, false]);
+    setSecondFilterValue(['재료']);
+    setFirestFilterValue('가공방식');
   };
   // =================================================================
-  // =======================filter value 저장==========================
-  const [firestFilterValue, setFirestFilterValue] = React.useState('가공방식');
-  const [secondFilterValue, setSecondFilterValue] = React.useState(['재료']);
-  console.log(secondFilterValue);
-  console.log(secondFilterState);
-  // =================================================================
-
-  // const changevalue = (e: React.MouseEvent<HTMLElement>) => {
-
-  // };
 
   return (
     <Presenter
@@ -91,7 +90,6 @@ export function Filter(props: PointContainerPropType) {
       secondFilterState={secondFilterState}
       firestFilterValue={firestFilterValue}
       secondFilterValue={secondFilterValue}
-      // changevalue={changevalue}
       {...props}
     />
   );
