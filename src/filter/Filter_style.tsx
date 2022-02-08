@@ -5,7 +5,7 @@ export const FilterConianier = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  margin-top: 110px;
+  margin-top: 40px;
 `;
 export const TitleContainer = styled.div`
   min-width: 1130px;
@@ -14,6 +14,7 @@ export const Title = styled.h2`
   font-size: 20px;
   font-weight: 600;
   color: #323d45;
+  line-height: 32px;
 `;
 export const SubText = styled.p`
   font-size: 16px;
@@ -48,8 +49,11 @@ export const Option = styled.option``;
 export const SelectContainer = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 32px;
 `;
-export const ToggleContainer = styled.div``;
+export const ToggleContainer = styled.div`
+  display: flex;
+`;
 export const FirstFilter = styled.div`
   position: relative;
   margin-right: 8px;
@@ -65,6 +69,9 @@ export const Button = styled.button`
   padding: 8px 12px;
   position: relative;
 `;
+export const ToggleText = styled.span`
+  font-size: 14px;
+`;
 export const Ul = styled.ul`
   display: flex;
   flex-direction: column;
@@ -77,6 +84,7 @@ export const Ul = styled.ul`
   bottom: 0;
   left: 0;
   transform: translate(0%, 100%);
+  background: white;
 `;
 export const Li = styled.li`
   display: flex;
