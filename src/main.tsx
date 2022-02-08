@@ -36,7 +36,7 @@ export default function Main() {
       .then(res => {
         setCounselingState(res.data);
       })
-      .catch(error => console.log(error));
+      .catch(error => setCounselingState(error));
   };
 
   return (
