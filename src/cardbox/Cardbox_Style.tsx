@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrap = styled.div`
   border: 1px solid #e5e5e5;
@@ -14,13 +15,25 @@ export const Wrap = styled.div`
   :hover {
     border: 2px solid #2196f3;
   }
+  ${media.lessThan('medium')`
+  width: 320px;
+  height: 344px;
+  `}
 `;
 
-export const TextBox = styled.div``;
+export const TextBox = styled.div`
+  ${media.lessThan('medium')`
+   width: 288px;
+   height: 344px;
+`}
+`;
 
 export const Consulting = styled.div`
   display: flex;
   justify-content: space-between;
+  ${media.lessThan('medium')`
+    width: 288px;
+`}
 `;
 
 export const Header = styled.div`
@@ -70,6 +83,9 @@ export const CenterLine = styled.div`
   left: 16px;
   top: 132px;
   padding-top: 16px;
+  ${media.lessThan('small')`
+   width: 288px;
+  `}
 `;
 export const RequestDetails = styled.div`
   display: flex;

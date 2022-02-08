@@ -1,9 +1,9 @@
 import React from 'react';
 import { Filter as Presenter } from './Filter';
+import { FilterPropsType } from './Types';
 
-interface PointContainerPropType extends React.HTMLProps<HTMLDivElement> {}
-
-export function Filter(props: PointContainerPropType) {
+export function Filter(props: FilterPropsType) {
+  const { changeCounseling, toggleState } = props;
   // =======================filter value 저장==========================
   const [firestFilterValue, setFirestFilterValue] = React.useState('가공방식');
   const [secondFilterValue, setSecondFilterValue] = React.useState(['재료']);
@@ -90,7 +90,9 @@ export function Filter(props: PointContainerPropType) {
       secondFilterState={secondFilterState}
       firestFilterValue={firestFilterValue}
       secondFilterValue={secondFilterValue}
-      {...props}
+      changeCounseling={changeCounseling}
+      toggleState={toggleState}
+      // {...props}
     />
   );
 }

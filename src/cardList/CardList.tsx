@@ -1,24 +1,30 @@
-import useAxios from 'hooks/useAxios';
 import Cardbox from 'cardbox/Cardbox';
-import { Data } from '../interfaces';
 import * as S from './CardList_Style';
 
-export default function CardList() {
-  const { data }: any = useAxios('http://localhost:9000/requests');
+interface CardListPropsType {
+  counselingState: {}[];
+  counselingStateFilter: {}[];
+  toggleState: boolean;
+}
 
-  console.log('test>>', data);
+export default function CardList(props: CardListPropsType) {
+  const { counselingState, counselingStateFilter, toggleState } = props;
 
   return (
-    <>
-      {data?.length > 0 ? (
+    <div>
+      {toggleState ? (
         <S.Container>
-          {data?.map((data: Data, i: number) => {
-            return <Cardbox key={i} data={data} />;
+          {counselingStateFilter.map((List, index) => {
+            return <Cardbox key={index} List={List} />;
           })}
         </S.Container>
       ) : (
-        <S.Empty>조건에 맞는 견적 요청이 없습니다.</S.Empty>
+        <S.Container>
+          {counselingState?.map((List, index) => {
+            return <Cardbox key={index} List={List} />;
+          })}
+        </S.Container>
       )}
-    </>
+    </div>
   );
 }
