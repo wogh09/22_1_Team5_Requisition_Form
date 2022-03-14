@@ -10,12 +10,10 @@ export default function Main() {
   const [counselingState, setCounselingState] = useState([]);
   const [counselingStateFilter, setCounselingStateFilter] = useState([{}]);
   const [toggleState, setToggleState] = useState(false);
-  // =======================filter value 저장==========================
-  const [firestFilterValue, setFirestFilterValue] = useState('가공방식');
-  const [secondFilterValue, setSecondFilterValue] = useState(['재료']);
-  // =====================================================
-  // console.log(firestFilterValue);
-  // console.log(secondFilterValue);
+  const [firestFilterValue, setFirestFilterValue] = useState<string>('');
+  const [secondFilterValue, setSecondFilterValue] = useState<string[]>([
+    '재료',
+  ]);
 
   const changeCounseling = () => {
     setToggleState(!toggleState);
@@ -32,12 +30,14 @@ export default function Main() {
 
   const getData = async () => {
     axios
-      .get('http://localhost:9000/requests')
+      .get('./data.json')
       .then(res => {
-        setCounselingState(res.data);
+        setCounselingState(res.data.requests);
       })
       .catch(error => setCounselingState(error));
   };
+
+  console.log(counselingState);
 
   return (
     <>
