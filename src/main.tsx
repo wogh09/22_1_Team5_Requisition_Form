@@ -37,8 +37,6 @@ export default function Main() {
       .catch(error => setCounselingState(error));
   };
 
-  console.log(counselingState);
-
   return (
     <>
       <Nav />
